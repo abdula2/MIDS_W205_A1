@@ -1,0 +1,19 @@
+3. To calculate the measures with the most variability across the hospitals, I did a variance function on the normalized scores and then doing a grouping by the measure name returned te 
+top measures using a descending ORDER BY.
+
+
+
+
+>>> results.show()
+measurename          score_variance
+Median Time to Tr... 5.758827703781387
+Venous Thromboemb... 5.2696532214074
+ACEI or ARB for LVSD 4.750168099847828
+Anticoagulation T... 4.719481042443718
+Thrombolytic Therapy 4.651470099126758
+Relievers for Inp... 4.638562421133512
+Aspirin Prescribe... 4.636588396027488
+Aspirin at Arrival   4.555180342939033
+Venous Thromboemb... 4.511538547837932
+Systemic Corticos... 4.493143276860677
+Statin Prescribed... 4.366472336676255
