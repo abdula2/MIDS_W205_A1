@@ -1,0 +1,20 @@
+1. To calculate the list of best hospital, I took a calculated a normalised score( score/sample size) for each hospital, measure pair. I did this for both
+the readmissions and effective care datasets and did a union of rows from these two datasets into the final procedures_trans table I created. From this table,
+I grouped by the provider and took an avg of the scores and ordered it in descending order to find the hospitals with top 10 quality across
+the different measure types.
+
+>>> results.show()
+hospital_name        provider_id average_score      aggregate_score
+UNIV OF MD REHABI... 210058      7.6923076923076925 15.384615384615385
+SELLS INDIAN HEAL... 030074      7.454545454545454  7.454545454545454
+MARTIN COUNTY HOS... 451333      6.9                13.8
+LITTLE RIVER HEAL... 670094      6.339393939393939  19.018181818181816
+SOUTHERN INYO HOS... 051302      6.0                12.0
+NOVANT HEALTH HAY... 490144      5.731481481481481  51.58333333333333
+BEAR VALLEY COMMU... 051335      5.715634989828538  17.146904969485615
+WEST FELICIANA PA... 191306      5.628208399787346  28.141041998936732
+OSWEGO COMMUNITY ... 171302      5.583333333333333  5.583333333333333
+PHS INDIAN HOSPIT... 430082      5.218733383551933  20.87493353420773
+
+
+

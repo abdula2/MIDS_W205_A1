@@ -1,0 +1,18 @@
+2. For finding the best hospitals, I used a method similar to the one I used for the top 10 hospitals. Except that this time I grouped by the
+state. The states with the highest average scores are most likely the best hospitals. But care needs to be taken since a state might have very few number of hospitals
+that might be highly ranked while the scores others in the state might be non-available. So it might seem like the state has really good hospitals where in reality this was
+caused by a lack of data. GU for instance has data for only one hospital. so WY might be a better state compared to GU with regards to the number of hospitals.
+
+
+ results.show()
+state hospital_count average_score      aggregate_score
+GU    1              1.9975421787340069 57.9287231832862
+WY    28             1.6689844960005575 981.3628836483279
+ME    35             1.4808227548495863 1827.3352794843895
+VI    2              1.4503186082721329 97.1713467542329
+MT    58             1.3708076194600782 1226.87281941677
+MN    132            1.3504159934410345 4315.9295150375465
+NE    90             1.3266686768834228 2041.7430937235877
+NM    42             1.3117695754880645 1644.9590476620328
+SD    54             1.304733851539395  1105.1095722538676
+AK    21             1.3027612916555076 543.2514586203466
