@@ -1,0 +1,35 @@
+4. To calculate the corellation between the hospital procedure scores grouped by hospital and the survey scores, I first created an intermediate table called correlation and inside that
+I put the normalized score for each hospital and its survey score. After this I did a pearsons correlation on the two score columns to check their correlation. It gav me .123 as the correlation
+which shows that the correlation is not that strong.
+
+
+results=sqlContext.sql('select * from correlation')
+>>> results.show()
+hospital_name        provider_id norm_score         survey_score
+EXETER HOSPITAL INC  300023      0.8786639783117703 55.0
+POMERADO HOSPITAL    050636      1.2224537697429378 35.0
+HOSPITAL OF UNIV ... 390111      0.4400854619897421 48.0
+CARSON TAHOE REGI... 290019      0.7678385048594448 37.0
+MEMORIAL HOSPITAL... 530011      2.1782606159451294 40.0
+BEAUMONT HOSPITAL... 230089      0.7525668011040102 46.0
+TRINITY MEDICAL C... 010104      0.6037924149029136 62.0
+FLORIDA HOSPITAL ... 100045      0.7170281327587665 29.0
+SAN LEANDRO HOSPITAL 050773      2.210594726628278  16.0
+AULTMAN HOSPITAL     360084      0.3754865111614718 38.0
+SKIFF MEDICAL CENTER 160032      2.066081348632667  52.0
+LANCASTER REGIONA... 390061      1.256359649729241  45.0
+RUSSELL COUNTY ME... 490002      0.6026536555277043 23.0
+NORTHERN NEVADA M... 290032      1.205442454141895  46.0
+COLUMBIA MEMORIAL... 330094      1.085976941507216  22.0
+INDIANA UNIVERSIT... 150173      0.7148953369349871 25.0
+PROVIDENCE ALASKA... 020001      0.5392226893106645 32.0
+WASHINGTON HOSPIT... 390042      0.5218915085801419 36.0
+BLACK RIVER COMMU... 260227      1.0427173590496894 88.0
+ST ELIZABETH FT T... 180001      1.1242554184088607 35.0
+
+
+
+>>> results=sqlContext.sql('select corr(norm_score,survey_score) as correlatn from correlation')
+>>> results.show()
+correlatn
+0.12300209900750689
